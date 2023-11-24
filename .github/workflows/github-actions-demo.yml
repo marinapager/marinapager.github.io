@@ -16,5 +16,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-name: ShellCheck
-uses: ludeeus/action-shellcheck@2.0.0
