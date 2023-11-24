@@ -1,3 +1,8 @@
-- name: ShellCheck
-  uses: ludeeus/action-shellcheck@2.0.0
-            
+name: ShellCheck Demo
+run-name: ${{ github.actor }} is testing out ShellCheck 🐢 
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ludeeus/action-shellcheck@2.0.0
