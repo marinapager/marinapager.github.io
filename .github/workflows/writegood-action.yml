@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+
+name: write-good Demo
+run-name: ${{ github.actor }} is testing out write-good
+jobs:
+  write_good_job:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    name: A job to lint Markdown files
+    steps:
+    - uses: actions/checkout@v2
+    - name: write-good action step
+      id: write-good
+      uses: tomwhross/write-good-action@v1.6
+      # with:
+      #   directory: "manuscript" # Optional, uncomment to specify a directory to scan
+    # Use the output from the `write-good` step
+    - name: Get the write-good output
+      run: echo "${{ steps.write-good.outputs.result }}"
